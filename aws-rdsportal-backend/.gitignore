@@ -1,4 +1,3 @@
-.env.development
 # ======================
 # Python
 # ======================
@@ -18,3 +17,24 @@ build/
 *.manifest
 *.spec
 *.log
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+*.log
+
+.env.development
