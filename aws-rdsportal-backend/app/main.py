@@ -6,6 +6,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles  # <--- 添加这一行导入
 
 from app.api.v1.router import router as api_v1_router
 from app.core.config import get_settings
@@ -91,9 +92,10 @@ main_router.include_router(api_v1_router)
 # ========== 根路径 ==========
 
 # 将主路由器挂载到应用
-app.include_router(main_router)
+# app.include_router(main_router)
+app.include_router(main_router,prefix="/api")
 
-
+app.mount("/", StaticFiles(directory="app/frontend", html=True), name="frontend")
 
 # 启动事件
 @app.on_event("startup")
@@ -119,8 +121,8 @@ if __name__ == "__main__":
 
     uvicorn.run(
         "app.main:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True,  # 开发环境启用热重载
+        host="127.0.0.1",
+        port=8080,
+        reload=False,  # 开发环境启用热重载
         log_level=settings.LOG_LEVEL.lower(),
     )

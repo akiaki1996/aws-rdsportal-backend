@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="uv (aws-rds-dbportal)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="uv (aws-rds-dbportal)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="uv (aws-rdsportal-backend) (2)" project-jdk-type="Python SDK" />
 </project>

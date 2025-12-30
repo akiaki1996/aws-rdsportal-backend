@@ -38,3 +38,5 @@ build/
 *.log
 
 .env.development
+
+frontend

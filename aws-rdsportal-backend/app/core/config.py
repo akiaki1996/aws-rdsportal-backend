@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     )
 
     # ===== APP =====
-    PROJECT_NAME: str = Field(default="AWS User Backend", description="项目名称")
+    PROJECT_NAME: str = Field(default="AWS RDS Portal Backend", description="项目名称")
     ALLOWED_ORIGINS: List[str] = Field(
         default=[
             "https://pntqeuwnmfco.h5master.com",
@@ -106,7 +106,6 @@ def get_settings() -> Settings:
                 f"?sslmode=require"
             )
 
-        # todo 后续修改为正确的数据库配置
         # ===== 最终校验 =====
         if not _settings.DATABASE_URL:
             BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -144,5 +143,5 @@ def get_settings() -> Settings:
                     #     "[CONFIG ERROR] DATABASE_URL 未配置。"
                     #     "请通过 Parameter Store 或 Secrets Manager 提供数据库连接信息"
                     # )
-
-    return _settings
+        print("URL : " + _settings.DATABASE_URL)
+        return _settings

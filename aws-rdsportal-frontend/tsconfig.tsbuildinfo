@@ -1,0 +1,1 @@
+{"root":["./src/app.vue","./src/main.ts","./src/api/project.ts","./src/components/helloworld.vue","./src/components/projecttable.vue","./src/components/sidebar.vue","./src/router/index.ts","./src/utils/request.ts","./src/views/projectlist.vue"],"version":"5.9.3"}
